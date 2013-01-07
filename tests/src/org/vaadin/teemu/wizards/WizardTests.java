@@ -4,6 +4,8 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.vaadin.teemu.wizards.Wizard;
+import org.vaadin.teemu.wizards.WizardStep;
 
 public class WizardTests {
 

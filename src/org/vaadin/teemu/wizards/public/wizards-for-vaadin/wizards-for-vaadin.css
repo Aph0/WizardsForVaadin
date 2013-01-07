@@ -3,7 +3,8 @@
 	overflow: hidden;
 }
 
-.v-wizardprogressbar .bar-wrapper {
+
+.v-wizardprogressbar.wiz-horiz .bar-wrapper {
 	clear: left;
 	float: left;
 	width: 100%;
@@ -11,7 +12,7 @@
 	margin-bottom: 3px;
 	border: none;
 }
-.v-wizardprogressbar .bar {
+.v-wizardprogressbar.wiz-horiz .bar {
 	height: 100%;
 	background-color: #00b3ef; 
 	background: -moz-linear-gradient(center top , #20D4FF, #009CD0) repeat-x scroll left top transparent;
@@ -19,20 +20,86 @@
 	-moz-transition: width 0.5s ease-out 0s;
 	-webkit-transition: width 0.5s ease-out 0s;
 }
+/*** Vertical stuff **/
+
+.v-wizardprogressbar table {
+	float: left;
+}
+
+.v-wizardprogressbar.wiz-vertical .bar-wrapper {
+	width: 10px;
+	margin-left:3px;
+	height: 100%;
+	border: none;
+	float: left;
+}
+.v-wizardprogressbar.wiz-vertical .bar {
+	width: 100%;
+	background-color: #00b3ef;
+	background: -moz-linear-gradient(left, #20D4FF, #009CD0);
+	background: -webkit-linear-gradient(left, #20D4FF, #009CD0);
+	-moz-transition: height 0.5s ease-out 0s;
+	-webkit-transition: height 0.5s ease-out 0s;
+}
+
+/*
+.v-wizardprogressbar.wiz-vertical .step {
+	display: table;
+}
+
+.v-wizardprogressbar.wiz-vertical .step-caption {
+	display: table-cell;
+    vertical-align: middle;
+}
+*/
+/*** Test ends for vertical stuff **/
 
 /* Step captions */
+
 .v-wizardprogressbar .step-caption {
 	color: #bfbfbf;
 	font-size: 110%;
-	white-space: nowrap;
 	padding-bottom: 2px;
 	text-align: center;
 	-moz-transition: all 0.25s ease-in-out;
 	-webkit-transition: all 0.25s ease-in-out; 
 }
+
+.v-wizardprogressbar.wiz-vertical .step-caption {
+	padding-bottom: 7px;
+	text-align: left;
+}
+
+.v-wizardprogressbar.wiz-horiz .step-caption {
+		white-space: nowrap;
+}
+
 .v-wizardprogressbar .completed .step-caption,
 .v-wizardprogressbar .current .step-caption {
 	color: #000;
+}
+.v-wizardprogressbar .step.current.all-linkmode .step-caption {
+		font-weight: bold;
+}
+
+/* This will make all steps blue. Maybe take .completed and .current into account if needed... */
+/*
+.v-wizardprogressbar .completed.link .step-caption
+ {
+	color: blue;
+}
+*/
+
+.v-wizardprogressbar .step.link div.step-caption:hover {
+	text-decoration: underline;
+	cursor: pointer !important;
+}
+
+.v-wizardprogressbar .link .step-caption
+{
+	-moz-transition: color 1s; 
+	-webkit-transition: color 1s;
+	color: #006;
 }
 
 /* Step progress bar */

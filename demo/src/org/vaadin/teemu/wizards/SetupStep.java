@@ -7,7 +7,7 @@ import com.vaadin.ui.VerticalLayout;
 public class SetupStep implements WizardStep {
 
     public String getCaption() {
-        return "Initialize the Wizard";
+        return "Initialize the Wizard. Long text";
     }
 
     public Component getContent() {
@@ -35,6 +35,12 @@ public class SetupStep implements WizardStep {
 
     public boolean onBack() {
         return true;
+    }
+
+    @Override
+    public void onActivate() {
+        System.out.println("Setupstep activated!");
+
     }
 
 }

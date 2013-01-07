@@ -44,11 +44,18 @@ public class IntroStep implements WizardStep {
     }
 
     public boolean onAdvance() {
+        System.out.println("onAdvance - intro step");
         return true;
     }
 
     public boolean onBack() {
         return true;
+    }
+
+    @Override
+    public void onActivate() {
+        System.out.println("IntroStep activated!");
+
     }
 
 }

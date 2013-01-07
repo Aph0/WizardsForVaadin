@@ -14,9 +14,11 @@ public class LastStep implements WizardStep {
     private CheckBox allowBack;
     private VerticalLayout layout;
     private Wizard owner;
+    private final WizardsDemoApplication wizardsDemoApplication;
 
-    public LastStep(Wizard owner) {
+    public LastStep(Wizard owner, WizardsDemoApplication wizardsDemoApplication) {
         this.owner = owner;
+        this.wizardsDemoApplication = wizardsDemoApplication;
     }
 
     public String getCaption() {
@@ -58,6 +60,14 @@ public class LastStep implements WizardStep {
                                 public String getCaption() {
                                     return "Generated step";
                                 }
+
+                                @Override
+                                public void onActivate() {
+                                    System.out.println(getCaption()
+                                            + " activated");
+
+                                }
+
                             });
                         }
                     }));
@@ -72,15 +82,23 @@ public class LastStep implements WizardStep {
     }
 
     public boolean onAdvance() {
+        System.out.println("onAdvance - last step");
         return true;
     }
 
     public boolean onBack() {
         boolean allowed = allowBack.booleanValue();
         if (!allowed) {
-            layout.getApplication().getMainWindow()
-                    .showNotification("Not allowed, sorry");
+            wizardsDemoApplication.getMainWindow().showNotification(
+                    "Not allowed, sorry");
+
+            layout.addComponent(new Label("Not allowed, sorry"));
         }
         return allowed;
+    }
+
+    @Override
+    public void onActivate() {
+        System.out.println("Laststep activated!");
     }
 }

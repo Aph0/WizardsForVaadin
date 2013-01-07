@@ -51,4 +51,10 @@ public class ListenStep implements WizardStep {
         return true;
     }
 
+    @Override
+    public void onActivate() {
+        System.out.println("ListenStep activated!");
+
+    }
+
 }

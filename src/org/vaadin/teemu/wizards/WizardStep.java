@@ -38,4 +38,10 @@ public interface WizardStep {
      */
     public boolean onBack();
 
+    /**
+     * This method is called when a step is activated and is ready to be
+     * displayed
+     */
+    public void onActivate();
+
 }
