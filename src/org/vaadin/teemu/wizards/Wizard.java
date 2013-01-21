@@ -663,7 +663,7 @@ public class Wizard extends CustomComponent implements FragmentChangedListener {
             if (currentStep != lastStep) {
                 // If all goes well, after this, currentStep should match
                 // lastStep
-                activateStep(lastStep);
+                activateStep(getId(lastStep));
             }
 
             if (currentStep == lastStep) {
