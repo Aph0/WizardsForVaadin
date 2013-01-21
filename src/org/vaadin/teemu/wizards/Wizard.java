@@ -590,8 +590,6 @@ public class Wizard extends CustomComponent implements FragmentChangedListener {
                 activateStep(stepToActivate);
             }
 
-            System.out.println(stepIndex - currIndex);
-
             // We will no longer prevent a user for moving past the last step
             // using indices
             // if (lastCompletedIndex < stepIndex) {
